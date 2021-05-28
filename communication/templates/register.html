@@ -1,0 +1,62 @@
+{%  load static   %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/register.css' %}">
+    
+    <title></title>
+    
+</head>
+<script src="{% static 'js/register.js' %}"></script>
+<body>
+    <div id="registration-form">
+        <div class='fieldset'>
+        <legend>Register</legend>
+            <form  action="" method="post" onsubmit="return validate();" enctype="multipart/form-data">
+                {% csrf_token   %}
+                <div class='row'>
+                    <label for='firstname'>UserName</label>
+                    <input type="text" placeholder="First Name" name='UserName' id='firstname' data-required="true" data-error-message="Your First Name is required">
+                </div>
+
+                <div class='row'>
+                    <label for='firstname'>First Name</label>
+                    <input type="text" placeholder="First Name" name='FirstName' id='firstname' data-required="true" data-error-message="Your First Name is required">
+                </div>
+                <div class='row'>
+                    <label for="lastname">Last Name</label>
+                    <input type="text" placeholder="Last Name"  name='LastName' data-required="true" data-type="email" data-error-message="Your Last Name is required">
+                </div>
+                <div class='row'>
+                    <label for="email">E-mail</label>
+                    <input type="text" placeholder="Email" name='Email' data-required="true" data-error-message="Your E-mail is required">
+                </div>
+                <div class='row'>
+                    <label for="password">Password</label>
+                    <input type="password" placeholder="Password" name='Password' data-required="true" data-error-message="Your password is required">
+                </div>
+
+                <div class='row'>
+                    <label for="confirmpassword">Confirm Password</label>
+                    <input type="password" placeholder="Confirm Password" name='ConfirmPassword' data-required="true" data-error-message="Confirm password is required">
+                </div>
+
+                <div class='row'>
+                    <label for="image">Upload Profile Image</label>
+                    <input type="file" class="custom-file-input" name="image" >
+                </div>
+                <input type="submit" name="submit" value="Register">
+
+                
+            </form>
+            If already registered&nbsp;&nbsp;&nbsp;<a class="btn-info"href="{% url 'login'  %}">Signin</a>
+           
+        </div>
+
+    
+    </div>
+</body>
+</html>
